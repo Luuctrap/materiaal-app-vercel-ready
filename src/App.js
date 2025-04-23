@@ -76,7 +76,7 @@ export default function App() {
       <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Materiaalregistratie per Klus</h1>
       <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
         <input placeholder="Nieuwe klusnaam" value={huidigeKlus} onChange={(e) => setHuidigeKlus(e.target.value)} />
-        <button onClick={voegKlusToe}>➕ Voeg klus toe</button>
+        <button onClick={voegKlusToe}>+ Voeg klus toe</button>
       </div>
 
       <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
@@ -88,7 +88,7 @@ export default function App() {
           <option value="">Alle maanden</option>
           {uniekeMaanden.map((m, i) => <option key={i} value={m}>{m}</option>)}
         </select>
-        <button onClick={exporteerNaarExcel}>📤 Export</button>
+        <button onClick={exporteerNaarExcel}>↑ Export</button>
       </div>
 
       {klussen.map((klus, index) => (
@@ -97,8 +97,8 @@ export default function App() {
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
             <input placeholder="Materiaal" value={materiaal} onChange={(e) => setMateriaal(e.target.value)} />
             <input type="number" min={1} value={aantal} onChange={(e) => setAantal(Number(e.target.value))} />
-            <button onClick={() => voegMateriaalToe(index)}>➕</button>
-            <button onClick={startScanner}>📷 Scan</button>
+            <button onClick={() => voegMateriaalToe(index)}>+</button>
+            <button onClick={startScanner}>C Scan</button>
           </div>
           <ul>
             {klus.materialen.map((mat, i) => (
